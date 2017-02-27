@@ -1,0 +1,97 @@
+/* 初始化部分 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  background-color: #f2f2f2;
+  color: #333;
+  font-size: 14px;
+}
+
+header {
+  width: 100%;
+  background-color: #000;
+}
+
+header section {
+  width: 1000px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+header img {
+  height: 40px;
+  width: auto;
+  margin: 5px 0 0 10px;
+}
+
+header ul {
+  float: right;
+  margin: 13px 0 0 0;
+}
+
+header ul li {
+  float: left;
+  width: 80px;
+
+}
+
+header ul li a {
+  color: #fff;
+  font-size: 10px;
+}
+
+header ul li.selected a {
+  color: #ccc;
+}
+
+article {
+  width: 960px;
+  border: 1px solid #ccc;
+  margin: 20px auto 0;
+  background-color: #fff; 
+  padding: 30px 20px;
+}
+
+article h2 {
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+article h3 {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+article label {
+  font-size: 12px;
+}
+
+article p {
+  text-indent: 30px;
+  margin: 10px 0;
+  line-height: 25px;
+}
+
+article ul {
+  list-style: none;
+  margin: 0 0 5px 10px;
+}
+
+figure {
+  width: 100px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  margin: 20px 30px;
+}
+
+figure img {
+  width: 100%;
+
+}
