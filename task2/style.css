@@ -49,10 +49,11 @@ header ul li.selected {
 /* 文章部分 */
 article {
   width: 1200px;
-  border: 1px solid #ccc;
   margin: 20px auto 0;
   background-color: #fff; 
   padding: 40px 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px #828282;
 }
 
 article h2 {
