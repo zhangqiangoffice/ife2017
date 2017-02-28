@@ -1,0 +1,73 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+body, button, input, select, textarea {
+  font: 16px tahoma,sans-serif,Verdana, Microsoft YaHei, Simsun;
+  color: #333;
+}
+small {
+  font-size:14px
+}
+fieldset,
+img {
+  border: 0;
+  width: 100%;
+}
+ol,
+ul {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+em {
+  font-style: normal;
+}
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+p {
+  text-align: justify;
+  text-justify: distribute;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+a:hover {
+  color: #f60;
+  text-decoration: none;
+}

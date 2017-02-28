@@ -1,0 +1,53 @@
+
+@import "zlib.v2.less";
+
+.box {
+	.p-r;
+	margin: 20px;
+	background-color: #eee;
+	padding: 20px;
+	border: 1px solid #999;
+	.clearfix;
+
+	div {
+		border: 1px solid #999;
+		background-color: #fff;
+	}
+
+	img {
+		.size(80px, 80px);	
+	}
+
+	.left {
+		.f-l;
+		width: 200px;
+		padding: 20px 0;
+
+		img {
+			.inline;
+			margin: 0 10px 0 20px;
+			vertical-align: top;
+		}
+	}
+
+	.middle {
+		margin: 0 143px 0 223px;
+		padding: 10px 0;
+		font-size: 14px;
+		p {
+			margin: 10px 20px;
+		}
+	}
+
+	.right {
+		.f-r;
+		width: 120px;
+		padding: 0;
+
+		img {
+			.block;
+			margin: 20px;
+		}
+	}
+
+}
