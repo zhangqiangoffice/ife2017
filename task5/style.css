@@ -18,7 +18,6 @@ header {
 }
 
 header section {
-  width: 1240px;
   height: 60px;
   margin: 0 auto;
 }
@@ -31,7 +30,7 @@ header img {
 
 header ul {
   float: right;
-  margin: 20px 0 0 0;
+  margin: 20px 10px 0 0;
 }
 
 header ul li {
@@ -45,10 +44,34 @@ header ul li.selected {
   color: #999;
 }
 
+.main {
+  width: 100%;
+}
+
+.main:before {
+  content: " ";
+  display: table;
+}
+
+.main:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.right {
+  width: 400px;
+  float: right;
+  margin-right: 20px;
+}
+
+.left {
+  margin: 0 435px 0 20px;
+}
+
 
 /* 文章部分 */
 article {
-  width: 1200px;
   margin: 20px auto 0;
   background-color: #fff; 
   padding: 40px 20px;
@@ -86,14 +109,30 @@ article ul {
   line-height: 25px;
 }
 
+article img {
+  width: 300px;
+}
+
 /* 图片流部分 */
+.imgs:before {
+  content: " ";
+  display: table;
+}
+
+.imgs:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
 figure {
   width: 100px;
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
-  margin: 15px 40px;
+  margin: 15px 0 15px 40px;
   font-size: 12px;
+  float: left;
 }
 
 figure img {
@@ -127,6 +166,7 @@ table.table1 thead {
 
 table.table1 tfoot {
   background-color: #ccc;
+  font-weight: 700;
 }
 
 /* 侧栏部分 */
@@ -153,7 +193,7 @@ footer {
 
 /* 侧栏的表格 */
 table.table2 {
-  margin: 5px 0 5px 290px;
+  margin: 5px 0 5px 5px;
   text-align: left;
 }
 
@@ -167,11 +207,12 @@ td.tip {
 }
 
 input , textarea {
+  font-size: 14px;
   padding: 3px 5px;
 }
 
 textarea {
-  width: 765px;
+  width: 200px;
   height: 105px
 }
 

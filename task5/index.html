@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>任务二：零基础HTML编码</title>
+  <title>任务五：零基础HTML及CSS编码（二）</title>
+  <link rel="stylesheet" type="text/css" href="initial.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="task.css">
 </head>
 <body>
   <header>
@@ -17,174 +19,183 @@
     </section>
   </header>
 
-  <article>
-    <h2>文章一级标题</h2>
-    <h3>文章二级标题</h3>
-    <label>文章作者 文章发表时间</label>
-    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，</p>
-    <img src="logo.png">
-    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com" target="_blank">这里有一个链接点击后打开新窗口链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，</p>
-  </article>
+  <div class="main">
+    <div class="right">
+      <article>
+        <div class="title">这里以后是一个侧栏，这是侧栏的标题</div>
+        <form>
+          <table class="table2">
+            <tbody>
+              <tr>
+                <td>请输入邮箱地址</td>
+                <td><input type="text" placeholder="这是一个文本输入框" /></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="tip">邮箱地址请按要求格式输入</td>
+              </tr>
+              <tr>
+                <td>请输入密码</td>
+                <td><input type="password" placeholder="这是一个文本输入框" /></td>
+              </tr>
+              <tr>
+                <td>请重复输入密码</td>
+                <td><input type="text" placeholder="这是一个文本输入框" /></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="tip">密码请为6-16位英文数字</td>
+              </tr>
+              <tr>
+                <td>性别</td>
+                <td>
+                  <input type="radio" name="sex" selected="selected">男</input>
+                  <input type="radio" name="sex" >女</input>
+                </td>
+              </tr>
+              <tr>
+                <td>城市</td>
+                <td>
+                  <select>
+                    <option>北京</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>爱好</td>
+                <td>
+                  <input type="checkbox" name="hoby">运动</input>
+                  <input type="checkbox" name="hoby">艺术</input>
+                  <input type="checkbox" name="hoby">科学</input>
+                </td>
+              </tr>
+              <tr>
+                <td>个人描述</td>
+                <td>
+                  <textarea>这是一个多行输入输入框，输入您的个人描述</textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button">确认提交</button>
+        </form>
+      </article>
+    </div>
+    <div class="left">
+      <article>
+        <h2>文章一级标题</h2>
+        <h3>文章二级标题</h3>
+        <label>文章作者 文章发表时间</label>
+        <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，</p>
+        <img src="logo.png">
+        <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com" target="_blank">这里有一个链接点击后打开新窗口链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，</p>
+      </article>
 
-  <article>
-    <h2>另一篇文章一级标题</h2>
-    <h3>文章二级标题</h3>
-    <label>文章作者 文章发表时间</label>
-    <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，</p>
-    <img src="logo.png">
-    <ul>
-      <li>列表项目一</li>
-      <li>列表项目二</li>
-      <li>列表项目三</li>
-    </ul>
-  </article>
+      <article>
+        <h2>另一篇文章一级标题</h2>
+        <h3>文章二级标题</h3>
+        <label>文章作者 文章发表时间</label>
+        <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，换行了<br />这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有一个链接链接到http://ife.baidu.com</a>，这是一个很长很长的段落，这是一个很长很长的段落，<b>这里有个粗体字</b>，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，</p>
+        <img src="logo.png">
+        <ul>
+          <li>列表项目一</li>
+          <li>列表项目二</li>
+          <li>列表项目三</li>
+        </ul>
+      </article>
 
-  <article>  
-    <h2>图片</h2>
-    <figure>
-      <figcaption>好看的图片</figcaption>
-      <img src="logo.png">
-    </figure>  
-    <figure>
-      <figcaption>好看的图片</figcaption>
-      <img src="logo.png">
-    </figure>
-    <figure>
-      <figcaption>好看的图片</figcaption>
-      <img src="logo.png">
-    </figure>
-    <figure>
-      <figcaption>好看的图片</figcaption>
-      <img src="logo.png">
-    </figure>
-    <figure>
-      <figcaption>好看的图片</figcaption>
-      <img src="logo.png">
-    </figure>
-    <figure>
-      <figcaption>好看的图片</figcaption>
-      <img src="logo.png">
-    </figure>
-    <figure>
-      <figcaption>好看的图片</figcaption>
-      <img src="logo.png">
-    </figure>
-    <figure>
-      <figcaption>好看的图片</figcaption>
-      <img src="logo.png">
-    </figure>
-  </article>
+      <article>  
+        <h2>图片</h2>
+        <section class="imgs">
+          <figure>
+            <figcaption>好看的图片</figcaption>
+            <img src="logo.png">
+          </figure>  
+          <figure>
+            <figcaption>好看的图片</figcaption>
+            <img src="logo.png">
+          </figure>
+          <figure>
+            <figcaption>好看的图片</figcaption>
+            <img src="logo.png">
+          </figure>
+          <figure>
+            <figcaption>好看的图片</figcaption>
+            <img src="logo.png">
+          </figure>
+          <figure>
+            <figcaption>好看的图片</figcaption>
+            <img src="logo.png">
+          </figure>
+          <figure>
+            <figcaption>好看的图片</figcaption>
+            <img src="logo.png">
+          </figure>
+          <figure>
+            <figcaption>好看的图片</figcaption>
+            <img src="logo.png">
+          </figure>
+          <figure>
+            <figcaption>好看的图片</figcaption>
+            <img src="logo.png">
+          </figure>
+          
+        </section>
+      </article>
 
-  <article>
-    <h2>最后一篇文章一级标题</h2>
-    <h3>文章二级标题</h3>
-    <label>文章作者 文章发表时间</label>
-    <ol>
-      <li>排名1</li>
-      <li>排名2</li>
-      <li>排名3</li>
-    </ol>
-    <caption>
-      下面是一个表格，给表格加一个border="1"好让你看出是一个表格
-    </caption>
-    <table class="table1">
-      <thead>
-        <tr>
-          <th>表头</th>
-          <th>表头</th>
-          <th>表头</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>表内容单元格</td>
-          <td>表内容单元格</td>
-          <td><a href="#">操作</a></td>
-        </tr>
-        <tr>
-          <td>表内容单元格</td>
-          <td>表内容单元格</td>
-          <td><a href="#">操作</a></td>
-        </tr>
-        <tr>
-          <td>表内容单元格</td>
-          <td>表内容单元格</td>
-          <td><a href="#">操作</a></td>
-        </tr>
-        <tr>
-          <td>表内容单元格</td>
-          <td>表内容单元格</td>
-          <td><a href="#">操作</a></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td>总计</td>
-          <td colspan="2">1000</td>
-        </tr>
-      </tfoot>
-    </table>
-  </article>
+      <article>
+        <h2>最后一篇文章一级标题</h2>
+        <h3>文章二级标题</h3>
+        <label>文章作者 文章发表时间</label>
+        <ol>
+          <li>排名1</li>
+          <li>排名2</li>
+          <li>排名3</li>
+        </ol>
+        <caption>
+          下面是一个表格，给表格加一个border="1"好让你看出是一个表格
+        </caption>
+        <table class="table1">
+          <thead>
+            <tr>
+              <th>表头</th>
+              <th>表头</th>
+              <th>表头</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>表内容单元格</td>
+              <td>表内容单元格</td>
+              <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+              <td>表内容单元格</td>
+              <td>表内容单元格</td>
+              <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+              <td>表内容单元格</td>
+              <td>表内容单元格</td>
+              <td><a href="#">操作</a></td>
+            </tr>
+            <tr>
+              <td>表内容单元格</td>
+              <td>表内容单元格</td>
+              <td><a href="#">操作</a></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>总计</td>
+              <td colspan="2">1000</td>
+            </tr>
+          </tfoot>
+        </table>
+      </article>
 
-  <article>
-    <div class="title">这里以后是一个侧栏，这是侧栏的标题</div>
-    <form>
-      <table class="table2">
-        <tbody>
-          <tr>
-            <td>请输入邮箱地址</td>
-            <td><input type="text" placeholder="这是一个文本输入框" /></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td class="tip">邮箱地址请按要求格式输入</td>
-          </tr>
-          <tr>
-            <td>请输入密码</td>
-            <td><input type="password" placeholder="这是一个文本输入框" /></td>
-          </tr>
-          <tr>
-            <td>请重复输入密码</td>
-            <td><input type="text" placeholder="这是一个文本输入框" /></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td class="tip">密码请为6-16位英文数字</td>
-          </tr>
-          <tr>
-            <td>性别</td>
-            <td>
-              <input type="radio" name="sex" selected="selected">男</input>
-              <input type="radio" name="sex" >女</input>
-            </td>
-          </tr>
-          <tr>
-            <td>城市</td>
-            <td>
-              <select>
-                <option>北京</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td>爱好</td>
-            <td>
-              <input type="checkbox" name="hoby">运动</input>
-              <input type="checkbox" name="hoby">艺术</input>
-              <input type="checkbox" name="hoby">科学</input>
-            </td>
-          </tr>
-          <tr>
-            <td>个人描述</td>
-            <td>
-              <textarea>这是一个多行输入输入框，输入您的个人描述</textarea>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button type="button">确认提交</button>
-    </form>
-  </article>
+    </div>
+  </div>
 
   <footer>
     版权所有&copy;
