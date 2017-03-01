@@ -1,0 +1,187 @@
+/* 初始化部分 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  background-color: #dedede;
+  color: #000;
+  font-size: 14px;
+}
+
+/* 头部标题栏 */
+header {
+  width: 100%;
+  background-color: #333;
+}
+
+header section {
+  width: 1240px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+header img {
+  height: 40px;
+  width: auto;
+  margin: 5px 0 0 10px;
+}
+
+header ul {
+  float: right;
+  margin: 20px 0 0 0;
+}
+
+header ul li {
+  float: left;
+  width: 80px;
+  color: #fff;
+  margin-left: 20px;
+}
+
+header ul li.selected {
+  color: #999;
+}
+
+
+/* 文章部分 */
+article {
+  width: 1200px;
+  margin: 20px auto 0;
+  background-color: #fff; 
+  padding: 40px 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px #828282;
+}
+
+article h2 {
+  font-size: 20px;
+  font-weight: 700;
+
+}
+
+article h3 {
+  font-size: 16px;
+  color: #888;
+  font-weight: 700;
+  padding: 20px 0 15px;
+}
+
+article label {
+  color: #888;
+  font-size: 12px;
+}
+
+article p {
+  text-indent: 30px;
+  margin: 10px 0;
+  line-height: 25px;
+}
+
+article ul {
+  list-style: none;
+  margin: 10px 0 0 20px;
+  line-height: 25px;
+}
+
+/* 图片流部分 */
+figure {
+  width: 100px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  margin: 15px 40px;
+  font-size: 12px;
+}
+
+figure img {
+  width: 100px;
+  height: 80px;
+  margin-top: 10px;
+
+}
+
+/* 最后一篇文章内部 */
+ol {
+  margin: 20px 0  20px 50px;
+}
+
+table.table1 {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table.table1 td,table.table1  th {
+  border: 1px solid #ccc;
+  padding: 3px 8px;
+}
+
+table.table1 thead {
+  background-color: #333;
+  color: #fff;
+}
+
+table.table1 tfoot {
+  background-color: #ccc;
+}
+
+/* 侧栏部分 */
+.title {
+  height: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  font-size: 16px;
+  border-left: 2px solid #ccc;
+  margin-top: -20px;
+  padding-left: 10px; 
+}
+
+/* 页脚 */
+footer {
+  background-color: #000;
+  margin-top: 20px;
+  width: 100%;
+  height: 70px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+}
+
+/* 侧栏的表格 */
+table.table2 {
+  margin: 5px 0 5px 290px;
+  text-align: left;
+}
+
+table.table2 td:first-child{
+  text-align: right;
+  padding: 10px;
+}
+
+td.tip {
+  color: #888;
+}
+
+input , textarea {
+  padding: 3px 5px;
+}
+
+textarea {
+  width: 765px;
+  height: 105px
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background-color: #3356cf;
+  color: #fff;
+  font-size: 20px;
+  border: 0;
+  border-radius: 10px;
+
+}
