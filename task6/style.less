@@ -1,22 +1,55 @@
 @import "zlib.v2.less";
 
+body {
+	background: #5d5d5d;
+}
+
+//报纸整体
 .paper {
 	.size(980px, 1386px);
 	margin: 0 auto;
 	background-color: #fff;
-	border: 1px solid #ccc;
 }
 
+//页眉部分
 header {
-	.w100;
+	.p-r;
+	width: 892px;
 	border-bottom: 2px solid #938e8c;
+	margin: 0 auto 35px;
 
 	.web {
-		.one-height(60px);
+		.p-r;
+		height: 61px;
 		width: 110px;
-		background-color: red;
+		background-color: #d55f5b;
 		color: #fff;
 		font-size: 12px;
 
+		span {
+			.p-a;
+			bottom: 3px;
+			left: 5px;
+
+		}
+
+	}
+
+	.date {
+		.p-a;
+		right: 0;
+		bottom: 5px;
+		font-size: 14px;
+		color: #d15e5e;
+	}
+}
+
+//banner部分
+.banner {
+	width: 892px;
+	margin: 0 auto;
+	.mac {
+		width: 641px;
+		height: 301px;
 	}
 }
