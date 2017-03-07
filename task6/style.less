@@ -9,6 +9,7 @@ body {
 	.size(980px, 1386px);
 	margin: 0 auto;
 	background-color: #fff;
+	.p-r;
 }
 
 //页眉部分
@@ -22,7 +23,7 @@ header {
 		.p-r;
 		height: 61px;
 		width: 110px;
-		background-color: #d55f5b;
+		background-color: #d45d5c;
 		color: #fff;
 		font-family: SimHei;
 		font-size: 12px;
@@ -49,39 +50,187 @@ header {
 .banner {
 	width: 892px;
 	margin: 0 auto;
-	.clearfix;
 
-	.mac {
+	.left {
 		width: 641px;
-		height: 301px;
-	}
+		.inline;
+		vertical-align: top;
+		
+		.mac {
+			height: 301px;
+		}
 
+		.neck {
+			margin-top: 40px;
+
+			section {
+				.inline;
+				vertical-align: top;
+				font-size: 12px;
+				line-height: 16px;
+
+				.title_p {
+					font-size: 16px;
+					text-decoration: underline;
+					margin-bottom: 5px;
+				}
+
+				&.what {
+					width: 230px;
+					.title_p {
+						color: #418c59
+					}
+				}
+
+				&.when {
+					width: 200px;
+					margin-left: 30px;
+					.title_p {
+						color: #d2994f
+					}
+				}
+
+				&.how {
+					margin-left: 30px;
+					.title_p {
+						color: #cc7680
+					}
+				}
+			}
+		}
+	}
 	.about{
 		width: 203px;
-		.f-r;
+		margin-left: 43px;
+		.inline;
 		border-top: 2px solid #cc8091;
+		vertical-align: top;
+
+		.line {
+			font-size: 24px;
+			font-family: "Microsoft YaHei";
+			text-decoration: underline;
+		}
+
+		.small {
+			font-size: 12px;
+			font-family: KaiTi;
+			color: #676767;
+		}
+
+		.sum {
+			font-size: 116px;
+			color: #75b86b;
+			font-style: italic;
+		}
+
+		.point {
+			font-size: 55px;
+			color: #cc8091;
+
+			label {
+				.inline;
+				.p-r;
+				p {
+					font-size: 21px;
+					.p-a;
+					bottom: 19px;
+				}
+				span {
+					font-size: 12px;
+					color: #aaa;
+				}
+			}
+		}
+	}
+}
+
+.main {
+	width: 892px;
+	margin: 70px auto 0;
+
+	article {
+		.inline;
+		vertical-align: top;
 	}
 
-	.line {
-		font-size: 24px;
-		font-family: "Microsoft YaHei";
-		text-decoration: underline;
+	.left {
+		width: 416px;
+
+		.title_section {
+			font-size: 42px;
+			color: #11456b;
+			line-height: 42px;
+			border-bottom: 2px solid #11456b;
+
+			.yellow {
+				font-size: 72px;
+				color: #f5e327;
+				font-style: italic;
+			}
+
+			.smaller {
+				font-size: 33px;
+			}
+		}
+
+		p {
+			font-size: 12px;
+			color: #767777;
+
+			&:not(:first-child) {
+				text-indent: 26px;
+			}
+			
+			&:first-child {
+				margin-top: 25px;
+
+				&:first-letter {
+					float: left;
+					color: #f5e327;
+					font-size: 70px;
+					vertical-align: middle;
+					line-height:70px;
+	    		margin-right:5px
+				}
+				
+			}
+		}
+
+		.pc {
+			.size(160px, 285px);
+			.f-r;
+			margin: 15px 0 10px 25px;
+		}
 	}
 
-	.small {
-		font-size: 12px;
-		font-family: KaiTi;
-		color: #676767;
-	}
+	.right {
+		width: 450px;
+		margin-left: 20px;
 
-	.sum {
-		font-size: 116px;
-		color: #75b86b;
-		font-style: italic;
-	}
+		.code {
+			.w100;
+		}
 
-	.point {
-		font-size: 55px;
-		color: #cc8091;
+		.cover {
+			margin-top: -60px;
+		}
+
+		.block {
+			background: #edefd5;
+		}
 	}
+}
+
+footer {
+	width: 862px;
+	height: 60px;
+	border-top: 1px solid #938e8c;
+	margin: 0 0 0 45px;
+	.p-a;
+	bottom: 0;
+	.t-r;
+	color: #d45d5c;
+	font-family: SimHei;
+	font-size: 12px;
 }
