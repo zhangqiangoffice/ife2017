@@ -2,6 +2,7 @@
 
 body {
 	background: #5d5d5d;
+	font-family: "Microsoft YaHei";
 }
 
 //报纸整体
@@ -55,9 +56,27 @@ header {
 		width: 641px;
 		.inline;
 		vertical-align: top;
+		.p-r;
 		
 		.mac {
 			height: 301px;
+			.block;
+		}
+
+		.cover_div {
+			.p-a;
+			.size(191px, 301px);
+			top: 0;
+
+			&.green {
+				left: 0;
+				background-color: rgba(65,140,89,0.7);
+			}
+
+			&.red {
+				right: 0;
+				background-color: rgba(204,118,128,0.7);
+			}
 		}
 
 		.neck {
@@ -162,6 +181,7 @@ header {
 			color: #11456b;
 			line-height: 42px;
 			border-bottom: 2px solid #11456b;
+			font-family: SimHei;
 
 			.yellow {
 				font-size: 72px;
@@ -215,40 +235,102 @@ header {
 
 		.cover {
 			margin-top: -60px;
-			height: 60px;
+			height: 55px;
+			background-color: rgba(0,0,0,0.9);
+			padding-top: 5px;
 
 			p {
-				margin: 5px 0 0 40px;
+				margin: 0 0 0 40px;
 				height: 44px;
 				line-height: 44px;
 				font-size: 18px;
 				.bold;
 				border-left: 3px solid #72b16a;
 				color: #fff;
+				padding-left: 15px;
+
+				span {
+					color: #72b16a;
+					font-style: italic;
+					font-size: 12px;
+					margin-left: 8px;
+				}
 			}
 		}
 
 		.block {
 			background: #edefd5;
 			margin-top: 30px;
-			height: 318px;
+			padding-top: 20px;
+			height: 298px;
 			.p-r;
+
+			ul {
+				font-size: 21px;
+				line-height: 40px;
+				margin: 0 0 20px 20px;
+				list-style: square inside url('./arrow.png');
+
+				span {
+					font-size: 12px;
+				}
+			}
 		}
 
 		.red_card {
-			.size(260px, 160px);
+			.size(250px, 160px);
 			.p-a;
 			left: 0;
 			bottom: 0;
 			background-color: #d45d5c;
 			color: #fff;
+
+			.zero {
+				.inline;
+				height: 86px;
+				line-height: 86px;
+				margin: 35px 0 0 5px;
+				font-size: 110px;
+				border-right: 2px solid #fff;
+			}
+
+			.word {
+				.inline;
+				width: 170px;
+				font-size: 20px;
+				.t-l;
+
+				.small {
+					font-size: 14px;
+				}
+			}
 		}
 
 		.quote {
 			.size(180px, 160px);
 			.p-a;
-			right: 0;
+			right: 10px;
 			bottom: 0;
+
+			span {
+				color: #d45d5c;
+				font-size: 72px;
+				font-family: SimHei;
+				line-height: 20px;
+				.p-r;
+
+				&.begin {
+					.f-l;
+					margin-left: -40px;
+					top: 17px;
+				}
+
+				&.end {
+					.f-r;
+					margin-right: -40px;
+					top: 29px;
+				}
+			}
 		}
 	}
 }
