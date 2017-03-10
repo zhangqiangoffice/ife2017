@@ -65,7 +65,8 @@
 
   //今天事件的target，并操作数组，渲染页面
   function clickHandle(event) {
-    var target = event.target;
+    var e = event || widow.event;
+    var target = e.target || e.srcElement;
     var tarName = target.className;
     var val = $('#num').value;
 
