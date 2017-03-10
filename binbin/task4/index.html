@@ -12,19 +12,25 @@
     background-color: red;
     margin-right: 10px;
     list-style: none;
+    cursor: pointer;
   }
-  button:nth-child(3) {
+  button {
+    cursor: pointer;
+  }
+  button:nth-child(2) {
     margin-right: 30px;
   }
   </style>
 <body>
   
-  <input type="number"></input>
-  <button type="button">左侧入</button>
-  <button type="button">右侧入</button>
-  
-  <button type="button">左侧出</button>
-  <button type="button">右侧出</button>
+  <input type="number" id="num"></input>
+  <span id="btns">
+    <button type="button" class="handler">左侧入</button>
+    <button type="button" class="handler">右侧入</button>
+    
+    <button type="button" class="handler">左侧出</button>
+    <button type="button" class="handler">右侧出</button>
+  </span>
 
   <ul id="list">
     <li>10</li>
@@ -39,66 +45,101 @@
 
 <script type="text/javascript">
 
-/**
- * getData方法
- * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
- * 返回一个数组，格式见函数中示例
- */
-function getData() {
-  /*
-  coding here
-  */
-  var data = [];
-  var list = document.querySelectorAll('#source li');
-  var li_array = Array.prototype.slice.call(list);
-  li_array.map((item, index) => {
-    var arr = item.innerText.split('空气质量：');
-    data.push([arr[0], arr[1] - 0])
-  })
-  return data;
+var val = '';   //input中显示的值
+var list = [10, 3, 7, 12, 11,30]    //数据队列
+init();
 
-}
+//根据val和list的值来渲染页面
+function render() {
+  
+  //修改input中的值
+  document.querySelector('#num').value = val;
 
-/**
- * sortAqiData
- * 按空气质量对data进行从小到大的排序
- * 返回一个排序后的数组
- */
-function sortAqiData(data) {
-  data.sort((a, b) => {
-    return a[1] - b[1]
-  })
-  return data;
-}
-
-/**
- * render
- * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
- * 格式见ul中的注释的部分
- */
-function render(data) {
+  //渲染队列
   var html = [];
-  var num = ['一', '二', '三', '四', '五', '六', '七', '八', '九'];
-  data.map((city, index) => {
-    html.push(`<li>第${num[index]}名：${city[0]}空气质量：<b>${city[1]}</b></li>`)
+  list.map((num, index) => {
+    html.push(`<li>${num}</li>`)
   })
-  document.querySelector('#resort').innerHTML = html.join('');
+  document.querySelector('#list').innerHTML = html.join('');
 }
 
-function btnHandle() {
-  var aqiData = getData();
-  aqiData = sortAqiData(aqiData);
-  render(aqiData);
+
+//获取元素在父元素中的索引值
+function getIndex(target) {
+  var siblings = target.parentNode.children;
+  for (var i = 0, len = siblings.length; i < len; i++) {
+    if (target == siblings[i]) {
+      return i
+    }
+  }
+}
+
+//点击队列中任何一个元素，则该元素会被从队列中删除
+function deleteData(target) {
+  if (target && target.nodeName.toUpperCase() == 'LI') {
+    var index = getIndex(target);
+    list.splice(index, 1);
+    render()
+  }
+}
+
+//点击按钮，操作队列
+function handleData(target) {
+  if (target && target.nodeName.toUpperCase() == 'BUTTON') {
+    var index = getIndex(target);
+    val = document.querySelector('#num').value;
+    
+    switch (index) {
+      
+      //左侧入，数组头部添加元素
+      case 0 :
+        if (val == '') {
+          return;
+        }
+        list.unshift(val);
+        val = '';
+        break;
+
+      //右侧入，数组尾部添加元素
+      case 1 :
+        if (val == '') {
+          return;
+        }
+        list.push(val);
+        val = '';
+        break;
+
+      //左侧出，数组头部删除元素
+      case 2 :
+        value = list.shift();
+        break;
+
+      //右侧出，数组尾部删除元素
+      case 3:
+        value = list.pop();
+        break;
+      default :
+        return;
+        break;
+    }
+
+    //渲染画面
+    render()
+  }
 }
 
 function init() {
 
-  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
-  var btn = document.querySelector('#sort-btn');
-  btn.addEventListener('click', btnHandle)
-}
+  // 给按钮们绑定点击事件
+  var btns = document.querySelector('#btns');
+  btns.addEventListener('click', (e) => handleData(e.target));
 
-init();
+  // 在这下面给list绑定一个事件代理，点击数字时触发删除操作的函数
+  var ul = document.querySelector('#list');
+  ul.addEventListener('click', (e) => deleteData(e.target))
+
+
+}
 
 </script>
 </body>
