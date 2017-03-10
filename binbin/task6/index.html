@@ -1,0 +1,146 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+  <style type="text/css">
+  li {
+    float: left;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: red;
+    margin-right: 10px;
+    list-style: none;
+    cursor: pointer;
+  }
+  li.searched {
+    color: #000;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:nth-child(2) {
+    margin-right: 30px;
+  }
+  </style>
+<body>
+  
+  <textarea type="number" id="num"></textarea>
+  <span id="btns">
+    <button type="button" class="leftIn">左侧入</button>
+    <button type="button" class="rightIn">右侧入</button>
+    
+    <button type="button" class="leftOut">左侧出</button>
+    <button type="button" class="rightOut">右侧出</button>
+  </span>
+  <input type="text" id="search"></input> <button type="button" class="search">查询</button>
+
+  <ul id="list">
+    <li class="data" data-index="0">10</li>
+    <li class="data" data-index="1">3</li>
+    <li class="data" data-index="2">7</li>
+    <li class="data" data-index="3">12</li>
+    <li class="data" data-index="4">11</li>
+    <li class="data" data-index="5">30</li>
+  </ul>
+
+
+<script type="text/javascript">
+
+(function() {
+
+  var list = [10, 3, 7, 12, 11,30];    //数据队列
+  var $ = selector => document.querySelector(selector);   //定义选择器
+  var key = '';
+  init();
+
+  //根据list的值来渲染页面
+  function render() {
+    
+    //渲染队列
+    var html = [];
+    list.map((num, index) => {
+      var searched = '';
+      if (('' + num).indexOf(key) >= 0) {
+        searched = 'searched'
+      }
+      html.push(`<li class="data ${searched}" data-index="${index}">${num}</li>`)
+    })
+    $('#list').innerHTML = html.join('');
+
+    //清空input中的值
+    $('#num').value = '';
+  }
+
+  //今天事件的target，并操作数组，渲染页面
+  function clickHandle(event) {
+    var e = event || widow.event;
+    var target = e.target || e.srcElement;
+    var tarName = target.className;
+    var val = $('#num').value;
+    var newList = val.split(/[\s\n\r\，\,\、\t\ ]/);
+    for(var i = 0; i < newList.length; i++){
+      if(newList[i] == "" || typeof(newList[i]) == "undefined"){
+        newList.splice(i, 1);
+        i--;
+      }
+    }
+    switch (tarName) {
+
+      //左侧入，数组头部添加元素
+      case 'leftIn' :
+        if (val == '') {
+          return;
+        }
+        list = newList.concat(list);
+        break;
+
+      //右侧入，数组尾部添加元素
+      case 'rightIn' :
+        if (val == '') {
+          return;
+        }
+        list = list.concat(newList);
+        break;
+
+      //左侧出，数组头部删除元素
+      case 'leftOut' :
+        alert(list.shift());
+        break;
+
+      //右侧出，数组尾部删除元素
+      case 'rightOut' :
+        alert(list.pop());
+        break;
+
+      //点击队列本身，数组中间删除元素
+      case 'data' :
+        var index = target.dataset.index;
+        list.splice(index, 1);
+        break;
+
+      //点击查询按钮
+      case 'search' :
+        key = $('#search').value;
+        $('#search').value = '';
+        break;
+      default :
+        return;
+        break;
+    }
+
+    //渲染画面
+    render()
+  }
+
+  function init() {
+
+    //绑定点击事件的监听
+    document.addEventListener('click', clickHandle, false);
+  }
+})()
+
+</script>
+</body>
+</html>
