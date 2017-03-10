@@ -25,99 +25,84 @@
   
   <input type="number" id="num"></input>
   <span id="btns">
-    <button type="button" class="handler">左侧入</button>
-    <button type="button" class="handler">右侧入</button>
+    <button type="button" class="leftIn">左侧入</button>
+    <button type="button" class="rightIn">右侧入</button>
     
-    <button type="button" class="handler">左侧出</button>
-    <button type="button" class="handler">右侧出</button>
+    <button type="button" class="leftOut">左侧出</button>
+    <button type="button" class="rightOut">右侧出</button>
   </span>
 
   <ul id="list">
-    <li>10</li>
-    <li>3</li>
-    <li>7</li>
-    <li>12</li>
-    <li>11</li>
-    <li>30</li>
+    <li class="data" data-index="0">10</li>
+    <li class="data" data-index="1">3</li>
+    <li class="data" data-index="2">7</li>
+    <li class="data" data-index="3">12</li>
+    <li class="data" data-index="4">11</li>
+    <li class="data" data-index="5">30</li>
   </ul>
-
-  
 
 <script type="text/javascript">
 
-var val = '';   //input中显示的值
-var list = [10, 3, 7, 12, 11,30]    //数据队列
-init();
+(function() {
 
-//根据val和list的值来渲染页面
-function render() {
-  
-  //修改input中的值
-  document.querySelector('#num').value = val;
+  var list = [10, 3, 7, 12, 11,30];    //数据队列
+  var $ = selector => document.querySelector(selector);   //定义选择器
+  init();
 
-  //渲染队列
-  var html = [];
-  list.map((num, index) => {
-    html.push(`<li>${num}</li>`)
-  })
-  document.querySelector('#list').innerHTML = html.join('');
-}
-
-
-//获取元素在父元素中的索引值
-function getIndex(target) {
-  var siblings = target.parentNode.children;
-  for (var i = 0, len = siblings.length; i < len; i++) {
-    if (target == siblings[i]) {
-      return i
-    }
-  }
-}
-
-//点击队列中任何一个元素，则该元素会被从队列中删除
-function deleteData(target) {
-  if (target && target.nodeName.toUpperCase() == 'LI') {
-    var index = getIndex(target);
-    list.splice(index, 1);
-    render()
-  }
-}
-
-//点击按钮，操作队列
-function handleData(target) {
-  if (target && target.nodeName.toUpperCase() == 'BUTTON') {
-    var index = getIndex(target);
-    val = document.querySelector('#num').value;
+  //根据list的值来渲染页面
+  function render() {
     
-    switch (index) {
-      
+    //渲染队列
+    var html = [];
+    list.map((num, index) => {
+      html.push(`<li class="data" data-index="${index}">${num}</li>`)
+    })
+    $('#list').innerHTML = html.join('');
+
+    //清空input中的值
+    $('#num').value = '';
+  }
+
+  //今天事件的target，并操作数组，渲染页面
+  function clickHandle(event) {
+    var target = event.target;
+    var tarName = target.className;
+    var val = $('#num').value;
+
+    switch (tarName) {
+
       //左侧入，数组头部添加元素
-      case 0 :
+      case 'leftIn' :
         if (val == '') {
           return;
         }
         list.unshift(val);
-        val = '';
         break;
 
       //右侧入，数组尾部添加元素
-      case 1 :
+      case 'rightIn' :
         if (val == '') {
           return;
         }
         list.push(val);
-        val = '';
         break;
 
       //左侧出，数组头部删除元素
-      case 2 :
-        value = list.shift();
+      case 'leftOut' :
+        alert(list.shift());
         break;
 
       //右侧出，数组尾部删除元素
-      case 3:
-        value = list.pop();
+      case 'rightOut' :
+        alert(list.pop());
         break;
+
+      //点击队列本身，数组中间删除元素
+      case 'data' :
+        var index = target.dataset.index;
+        list.splice(index, 1);
+        break;
+
       default :
         return;
         break;
@@ -126,20 +111,13 @@ function handleData(target) {
     //渲染画面
     render()
   }
-}
 
-function init() {
+  function init() {
 
-  // 给按钮们绑定点击事件
-  var btns = document.querySelector('#btns');
-  btns.addEventListener('click', (e) => handleData(e.target));
-
-  // 在这下面给list绑定一个事件代理，点击数字时触发删除操作的函数
-  var ul = document.querySelector('#list');
-  ul.addEventListener('click', (e) => deleteData(e.target))
-
-
-}
+    //绑定点击事件的监听
+    document.addEventListener('click', clickHandle, false);
+  }
+})()
 
 </script>
 </body>
