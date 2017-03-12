@@ -67,6 +67,7 @@ BinaryTree.prototype.showResult = function(){
         alert('没有找到要查询的内容！')
       } else if(arr[count - 1].getAttribute('data-word') === that.word){
         clearInterval(time);
+        arr[count - 1].style.backgroundColor = 'red';
         that.animQueue = [];
         that.isAnimating = false;
       }
