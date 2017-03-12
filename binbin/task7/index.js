@@ -41,9 +41,7 @@ BinaryTree.prototype.animate = function() {
       len = arr.length,
       time = parseInt(document.getElementById('time').value, 10) || 500,
       that = this,
-      count = 0,
-      time;
-      console.log(time);
+      count = 0;
     time = setInterval(function(){
       arr[Math.max(count - 1, 0)].style.backgroundColor = '#fff';
       arr[Math.min(count++, len - 1)].style.backgroundColor = 'blue';
