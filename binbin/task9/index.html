@@ -1,0 +1,71 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+  <style type="text/css">
+  div {
+    border: 1px solid #333;
+    padding: 5px 5px;
+    margin: 5px;
+    display: flex;
+    background-color: #fff;
+  }
+  div.selected {
+    background-color: green;
+  }
+  </style>
+<body>
+  <div id="root" data-word="super">
+    super
+    <div data-word="car">
+      car
+      <div data-word="apple">
+        apple
+        <div data-word="pear">pear</div>
+        <div data-word="pig">pig</div>
+        <div data-word="cola">cola</div>
+        <div data-word="soccor">soccor</div>
+      </div>
+      <div data-word="phone">phone</div>
+      <div>
+        <div data-word="book">book</div>
+        <div data-word="school">school</div>
+      </div>
+    </div>
+    <div data-word="note">
+      note
+      <div data-word="human">
+        human
+        <div data-word="code">code</div>
+        <div data-word="operate">operate</div>
+        <div data-word="man">man</div>
+      </div>
+      <div data-word="program">
+        program
+        <div data-word="element">
+          element
+          <div data-word="cat">cat</div>
+        </div>
+        <div data-word="glass">glass</div>
+      </div>
+    </div>
+    <div data-word="fish">fish</div>
+  </div>
+  <p id="start">
+    <label for="time">时间间隔(默认:500毫秒)：</label>
+    <input type="text" id="time" value="500">
+    ms，
+    <button type="button" data-method="preOrder">前序遍历</button>
+    <button type="button" data-method="postOrder">后序遍历</button>
+  </p>
+  <p>
+    <label for="time">查询：</label>
+    <input type="text" id="word" placeholder="输入要查询的单词">
+    <button type="button" id="search">查询</button>
+  </p>
+<script type="text/javascript" src="index.js">
+</script>
+</body>
+</html>
