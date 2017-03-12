@@ -45,7 +45,7 @@ BinaryTree.prototype.animate = function() {
       timer;
     timer = setInterval(function(){
       arr[Math.max(count - 1, 0)].style.backgroundColor = '#fff';
-      arr[Math.min(count++, len - 1)].style.backgroundColor = '#09f';
+      arr[Math.min(count++, len - 1)].style.backgroundColor = 'blue';
       if(count > len){
         clearInterval(timer);
         that.animQueue = [];
