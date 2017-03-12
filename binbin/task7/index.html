@@ -36,100 +36,107 @@
       </div>
     </div>
   </div>
-  <button type="button" id="preOrder">前序遍历</button>
-  <button type="button" id="inOrder">中序遍历</button>
-  <button type="button" id="postOrder">后序遍历</button>
-<script type="text/javascript">
-(function(){
+  <p>
+    <button type="button" data-method="preOrder">前序遍历</button>
+    <button type="button" data-method="inOrder">中序遍历</button>
+    <button type="button" data-method="postOrder">后序遍历</button>
+  </p>
+  <p>
+    <label for="time">时间间隔(默认:500毫秒)：</label>
+    <input type="text" id="time" value="500">
+    ms
+  </p>
+<script type="text/javascript" src="index.js">
+// (function(){
 
-  //遍历后的div数组
-  var arr = [];
-  var i = 0;
-  var timerId;
+//   //遍历后的div数组
+//   var arr = [];
+//   var i = 0;
+//   var timerId;
 
-  init();
+//   init();
 
-  //前序遍历
-  function preOrder(node) {
-    if (node) {
-      arr.push(node);
-      preOrder(node.children[0]);
-      preOrder(node.children[1]);
-    }
-  }
+//   //前序遍历
+//   function preOrder(node) {
+//     if (node) {
+//       arr.push(node);
+//       preOrder(node.children[0]);
+//       preOrder(node.children[1]);
+//     }
+//   }
 
-  //中序遍历
-  function inOrder(node) {
-    if (node) {
-      inOrder(node.children[0]);
-      arr.push(node);
-      inOrder(node.children[1]);
-    }
-  }
+//   //中序遍历
+//   function inOrder(node) {
+//     if (node) {
+//       inOrder(node.children[0]);
+//       arr.push(node);
+//       inOrder(node.children[1]);
+//     }
+//   }
 
-  //后序遍历
-  function postOrder(node) {
-    if (node) {
-      postOrder(node.children[0]);
-      postOrder(node.children[1]);
-      arr.push(node);
-    }
-  }
+//   //后序遍历
+//   function postOrder(node) {
+//     if (node) {
+//       postOrder(node.children[0]);
+//       postOrder(node.children[1]);
+//       arr.push(node);
+//     }
+//   }
 
-  //遍历动画
-  function cartoon() {
-    if (i === 0) {
-      arr[i++].style.backgroundColor = "blue";
-    } else if (i === arr.length) {
-      arr[i - 1].style.backgroundColor = "#fff";
-      clearInterval(timerId);
-    } else {
-      arr[i - 1].style.backgroundColor = "#fff";
-      arr[i++].style.backgroundColor = "blue";
-    }
-  }
+//   //遍历动画
+//   function cartoon() {
+//     if (i === 0) {
+//       arr[i++].style.backgroundColor = "blue";
+//     } else if (i === arr.length) {
+//       arr[i - 1].style.backgroundColor = "#fff";
+//       clearInterval(timerId);
+//     } else {
+//       arr[i - 1].style.backgroundColor = "#fff";
+//       arr[i++].style.backgroundColor = "blue";
+//     }
+//   }
 
-  //开始动画
-  function start() {
-    arr.map((item, index) => {
-      item.style.backgroundColor = '#fff';
-    })
-    var time = 500;
-    timerId = setInterval(cartoon, time);
-  }
+//   //开始动画
+//   function start() {
+//     arr.map((item, index) => {
+//       item.style.backgroundColor = '#fff';
+//     })
+//     var time = 500;
+//     timerId = setInterval(cartoon, time);
+//   }
 
-  //处理绑定事件
-  function clickHandle(event) {
-    clearInterval(timerId);
-    var e = event || widow.event;
-    var target = e.target || e.srcElement;
-    var tarId = target.id;
-    var rootDiv = document.querySelector('#root');
-    arr = [];
-    i = 0;
+//   //处理绑定事件
+//   function clickHandle(event) {
+//     clearInterval(timerId);
+//     var e = event || widow.event;
+//     var target = e.target || e.srcElement;
+//     var tarId = target.id;
+//     var rootDiv = document.querySelector('#root');
+//     arr = [];
+//     i = 0;
 
-    switch (tarId) {
-      case 'preOrder':
-        preOrder(rootDiv);
-        break;
-      case 'inOrder':
-        inOrder(rootDiv);
-        break;
-      case 'postOrder':
-        postOrder(rootDiv);
-        break;
-      default:
-        break;
-    }
-    start();
-  }
+//     switch (tarId) {
+//       case 'preOrder':
+//         preOrder(rootDiv);
+//         break;
+//       case 'inOrder':
+//         inOrder(rootDiv);
+//         break;
+//       case 'postOrder':
+//         postOrder(rootDiv);
+//         break;
+//       default:
+//         break;
+//     }
+//     start();
+//   }
 
-  //初始化，绑定点击事件
-  function init() {
-    document.addEventListener('click', clickHandle, false)
-  }
+//   //初始化，绑定点击事件
+//   function init() {
+//     document.addEventListener('click', clickHandle, false)
+//   }
 
-})()
+// })()
 </script>
 </body>
 </html>
