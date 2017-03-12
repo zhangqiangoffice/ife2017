@@ -42,12 +42,13 @@ BinaryTree.prototype.animate = function() {
       time = parseInt(document.getElementById('time').value, 10) || 500,
       that = this,
       count = 0,
-      timer;
-    timer = setInterval(function(){
+      time;
+      console.log(time);
+    time = setInterval(function(){
       arr[Math.max(count - 1, 0)].style.backgroundColor = '#fff';
       arr[Math.min(count++, len - 1)].style.backgroundColor = 'blue';
       if(count > len){
-        clearInterval(timer);
+        clearInterval(time);
         that.animQueue = [];
         arr[len - 1].style.backgroundColor = '#fff';
         that.isAnimating = false;
