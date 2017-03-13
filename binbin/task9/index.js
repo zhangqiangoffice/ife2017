@@ -6,6 +6,7 @@ function BinaryTree(root){
   this.isAnimating = false;
   this.animQueue = [];
   this.word = '';
+  this.selected = false;
 }
 
 //检查是否可操作
@@ -18,13 +19,35 @@ BinaryTree.prototype.isReady = function (){
   }
 }
 
-//初始化，退蓝
-BinaryTree.prototype.init = function() {
+//退色，都转为白色
+BinaryTree.prototype.white = function() {
+  this.selected = false;
   this.root.style.backgroundColor = '#fff';
   var divs = this.root.getElementsByTagName('div');
   Array.prototype.forEach.call(divs, function(item, index){
     item.style.backgroundColor = '#fff';
   });
+}
+
+//初始化，绑定单击选择事件
+BinaryTree.prototype.init = function(){
+  var that = this;
+  addEvent(this.root, 'click', function(event) {
+    var target = event.target;
+    that.white();
+    target.style.backgroundColor = 'green';
+    that.selected = target;
+  })
+}
+
+BinaryTree.prototype.remove = function(){
+  if (this.selected) {
+    var child = this.selected;
+    child.parentNode.removeChild(child);
+    this.selected = false;
+  } else {
+    alert('您尚未选择节点！')
+  }
 }
 
 //前序遍历算法
@@ -48,7 +71,7 @@ BinaryTree.prototype.search = function (word){
 
 //展现查询结果
 BinaryTree.prototype.showResult = function(){
-  this.init();
+  this.white();
   this.isAnimating = true;
   var arr = this.animQueue,
       len = arr.length,
@@ -88,7 +111,7 @@ BinaryTree.prototype.postOrder = function (node){
 
 //遍历动画效果
 BinaryTree.prototype.animate = function() {
-  this.init();
+  this.white();
   this.isAnimating = true;
   var arr = this.animQueue,
       len = arr.length,
@@ -118,6 +141,7 @@ function addEvent(elem, event, func){
 window.onload = function() {
   var root = document.getElementById('root');
   var tree = new BinaryTree(root);
+  tree.init();
   var start = document.getElementById('start');
   var btns = start.getElementsByTagName('button');
   
@@ -139,5 +163,17 @@ window.onload = function() {
       var word = document.getElementById('word').value;
       tree.search(word);
     }
+  })
+
+  //绑定删除按钮
+  var deleteBtn = document.getElementById('delete');
+  addEvent(deleteBtn, 'click', function(){
+    tree.remove()
+  })
+
+  //绑定添加按钮
+  var addBtn = document.getElementById('add');
+  addEvent(addBtn, 'click', function(){
+    tree.append()
   })
 }
