@@ -40,11 +40,24 @@ BinaryTree.prototype.init = function(){
   })
 }
 
+//删除节点
 BinaryTree.prototype.remove = function(){
   if (this.selected) {
     var child = this.selected;
     child.parentNode.removeChild(child);
     this.selected = false;
+  } else {
+    alert('您尚未选择节点！')
+  }
+}
+
+//插入节点
+BinaryTree.prototype.append = function(note) {
+  if (this.selected) {
+    var div = document.createElement('div');
+    var word = document.createTextNode(note);
+    div.appendChild(word);
+    this.selected.appendChild(div);
   } else {
     alert('您尚未选择节点！')
   }
@@ -88,7 +101,7 @@ BinaryTree.prototype.showResult = function(){
         arr[len - 1].style.backgroundColor = '#fff';
         that.isAnimating = false;
         alert('没有找到要查询的内容！')
-      } else if(arr[count - 1].getAttribute('data-word') === that.word){
+      } else if(arr[count - 1].firstChild.nodeType === 3 && arr[count - 1].firstChild.nodeValue.indexOf(that.word) >= 0){
         clearInterval(time);
         arr[count - 1].style.backgroundColor = 'red';
         that.animQueue = [];
@@ -174,6 +187,7 @@ window.onload = function() {
   //绑定添加按钮
   var addBtn = document.getElementById('add');
   addEvent(addBtn, 'click', function(){
-    tree.append()
+    var note = document.getElementById('note').value;
+    tree.append(note)
   })
 }
