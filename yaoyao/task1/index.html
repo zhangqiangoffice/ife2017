@@ -79,6 +79,12 @@ window.onload = function() {
     var val = username.value; 
     var className = '';
     var tipStr = '';
+
+    //去除空格
+    val = val.replace(/\s/g, '');
+    username.value = val;
+    
+    //判断长度
     var len = getByteLen(val);
     if (len === 0 ) {
       className = 'danger';
@@ -90,6 +96,8 @@ window.onload = function() {
       className = 'success';
       tipStr = '名称格式正确';
     }
+
+    //操作画面
     tip.innerHTML = tipStr;
     tip.className = className;
     username.className = className;
