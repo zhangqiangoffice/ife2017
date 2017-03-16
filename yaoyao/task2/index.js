@@ -22,27 +22,89 @@ function getByteLen(val) {
   return len;
 }
 
+//显示提示信息
+function showTip(elem, type, tip) {
+  var parent = elem.parentNode;
+  parent.className = type;
+  parent.getElementsByTagName('p')[0].innerHTML = tip;
+}
+
 window.onload = function() {
-  var btn = document.getElementById('check');
-  addEvent(btn, 'click', function(){
-    var username = document.getElementById('username');
-    var tip = document.getElementById('tip');
-    var val = username.value; 
-    var className = '';
-    var tipStr = '';
-    var len = getByteLen(val);
-    if (len === 0 ) {
-      className = 'danger';
-      tipStr = '姓名不得为空'
-    } else if (len < 4 || len > 16) {
-      className = 'danger';
-      tipStr = '姓名需为4~16个字符';
-    } else {
-      className = 'success';
-      tipStr = '名称格式正确';
-    }
-    tip.innerHTML = tipStr;
-    tip.className = className;
-    username.className = className;
-  })
+  var inputs = document.getElementsByTagName('input');
+  
+  //绑定 输入框 获得焦点 事件
+  Array.prototype.forEach.call(inputs, function(item, index){
+    addEvent(item, 'focus', function(){
+      var item = this.getAttribute('data-item');
+      var tip = '';
+      switch (item) {
+        case '名称' :
+          tip = '必填，长度为4~16个字节' 
+          break
+        case '密码' :
+          tip = '必填，须为6~12个数字或字母' 
+          break
+        case '密码确认' :
+          tip = '必填，必须与密码输入一致' 
+          break
+        case '邮箱' :
+          tip = '必填，正确的邮箱地址' 
+          break
+        case '手机' :
+          tip = '必填，真实的手机号码' 
+          break
+      }
+      showTip(this, '', tip);
+    })
+  });
+
+  //绑定 输入框 失去焦点 事件
+  Array.prototype.forEach.call(inputs, function(item, index){
+    addEvent(item, 'blur', function(){
+      var item = this.getAttribute('data-item');
+      var tip = '';
+      var val = this.value; 
+
+      //去除空格
+      val = val.replace(/\s/g, '');
+      this.value = val;
+
+      //判断长度
+      var len = getByteLen(val);
+
+      if (len === 0) {
+        tip = item + '不能为空';
+        showTip(this, 'danger', tip)
+      } else {
+        var flag = true;
+        switch (item) {
+          case '名称' :
+            if (len < 4 || len > 16) {
+              check = false
+            }
+            break
+          case '密码' :
+            var reg = /^[0-9a-zA-Z]{6,12}$/;
+            check = reg.test(val);
+            break
+          case '密码确认' :
+            tip = '必填，必须与密码输入一致' 
+            break
+          case '邮箱' :
+            tip = '必填，正确的邮箱地址' 
+            break
+          case '手机' :
+            tip = '必填，真实的手机号码' 
+            break
+        }
+
+        if (flag) {
+          showTip(this, 'success', item + '可用')
+        } else {
+          showTip(this, 'danger', item + '格式错误')
+        }
+
+      }
+    })
+  });
 }
