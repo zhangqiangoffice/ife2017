@@ -76,7 +76,7 @@ window.onload = function() {
         tip = item + '不能为空';
         showTip(this, 'danger', tip)
       } else {
-        var flag = true;
+        var check = true;
         switch (item) {
           case '名称' :
             if (len < 4 || len > 16) {
@@ -88,17 +88,20 @@ window.onload = function() {
             check = reg.test(val);
             break
           case '密码确认' :
-            tip = '必填，必须与密码输入一致' 
+            var p = document.getElementById('password').value;
+            check = (val === p);
             break
           case '邮箱' :
-            tip = '必填，正确的邮箱地址' 
+            var reg = /^[a-z_0-9.-]{1,64}@([a-z0-9-]{1,200}.){1,5}[a-z]{1,6}$/i;
+            check = reg.test(val);
             break
           case '手机' :
-            tip = '必填，真实的手机号码' 
+            var reg = /^1(3[4-9]|4[7]|5[0-27-9]|7[08]|8[2-478])\\d{8}$/;
+            check = reg.test(val);
             break
         }
 
-        if (flag) {
+        if (check) {
           showTip(this, 'success', item + '可用')
         } else {
           showTip(this, 'danger', item + '格式错误')
@@ -107,4 +110,9 @@ window.onload = function() {
       }
     })
   });
+
+  var btn = document.getElementById('btn');
+  addEvent(btn, 'click', function(){
+    console.log(123);
+  })
 }
