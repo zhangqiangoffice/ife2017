@@ -1,0 +1,71 @@
+
+@import "zlib.v2.less";
+
+.box {
+	margin: 10px auto;
+}
+
+ul {
+	li {
+		.size(41px, 41px);
+		font-size: 20px;
+		.t-c;
+		line-height: 40px;
+	}
+
+	&.line {
+		li {
+			.inline;
+		}
+	}
+}
+.body {
+	border: 2px solid #333;
+}
+
+.board {
+	border: 1px solid #333;
+	border-collapse: collapse;
+
+	td {
+		border: @border;
+		.size(40px, 40px);
+
+		&.selected {
+			background-color: red;
+			&:before {
+				content: " ";
+				background-color: blue;
+				.block;
+			}
+		}
+
+		&.direction0 {
+			&:before {
+				.size(40px, 10px);
+				margin-top: -20px;
+			}
+		}
+
+		&.direction2 {
+			&:before {
+				.size(40px, 10px);
+				margin-top: 30px;
+			}
+		}
+
+		&.direction1 {
+			&:before {
+				.size(10px, 40px);
+				margin-left: 0px;
+			}
+		}
+
+		&.direction3 {
+			&:before {
+				.size(10px, 40px);
+				margin-right: -20px;
+			}
+		}
+	}
+}
