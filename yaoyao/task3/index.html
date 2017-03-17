@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>耀耀学院</title>
+  <style type="text/css">
+  select {
+    width: 100px;
+  }
+  .hide {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+<form>
+  <table>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>
+          <input type="radio" name="type" class="radio" checked="checked" value="0" />
+          <label>在校生</label>
+        </td>
+        <td>
+          <input type="radio" name="type" class="radio" value="1" />
+          <label>非在校生</label>
+        </td>
+      </tr>
+      <tr id="school">
+        <td>学校</td>
+        <td>
+          <select id="city">
+            <option value="0">北京</option>
+            <option value="1">上海</option>
+            <option value="2">南京</option>
+          </select>
+        </td>
+        <td>
+          <select id="schools">
+            <option>北京大学</option>
+            <option>清华大学</option>
+            <option>中央财经大学</option>
+          </select>
+        </td>
+      </tr>
+      <tr id="company" class="hide">
+        <td>就业单位</td>
+        <td colspan="2">
+          <input type="text" />
+          <p></p>
+        </td>
+      </tr>
+    </tbody>
+  </table> 
+</form>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
