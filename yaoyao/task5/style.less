@@ -31,21 +31,15 @@ ul {
 		border: @border;
 		.size(40px, 40px);
 
-		transition: background-color 1s;
-		-moz-transition: background-color 1s;	/* Firefox 4 */
-		-webkit-transition: background-color 1s;	/* Safari 和 Chrome */
-		-o-transition: background-color 1s;	/* Opera */
-
 		&.selected {
 			background-color: red;
+			.p-r;
+			top: 0;
+			left: 0;
 			&:before {
 				content: " ";
 				background-color: blue;
 				.block;
-				transition: background-color 1s;
-				-moz-transition: background-color 1s;	/* Firefox 4 */
-				-webkit-transition: background-color 1s;	/* Safari 和 Chrome */
-				-o-transition: background-color 1s;	/* Opera */
 			}
 		}
 
